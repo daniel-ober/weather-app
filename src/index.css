@@ -9,18 +9,18 @@ body {
 }
 
 .app {
-  background-image: url("./assets/sunny.gif");
+  background-image: url("./assets/clear.gif");
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 ease-out;
+  transition: 0.4 linear;
 }
 
-.app.sunny {
-  background-image: url("./assets/sunny.gif");
+/* .app.clear {
+  background-image: url("./assets/clear.gif");
 }
 
-.app.cloudy {
-  background-image: url("./assets/cloudy.gif");
+.app.clouds {
+  background-image: url("./assets/clouds.gif");
 }
 
 .app.rain {
@@ -65,7 +65,7 @@ body {
 
 .app.tornado {
   background-image: url("./assets/tornado.gif");
-}
+} */
 
 main {
   min-height: 100vh;
@@ -149,6 +149,6 @@ main {
 .weather-box .weather {
   color: #fff;
   font-size: 48px;
-  font-weight: 500;
+  font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
