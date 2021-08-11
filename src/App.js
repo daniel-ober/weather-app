@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const api = {
   key: process.env.REACT_APP_API_KEY,
-  base: process.env.BASE
+  base: process.env.REACT_APP_API_BASE
 }
 
 function App() {
@@ -58,28 +58,6 @@ const search = e => {
 
   return (
     <div className="app">
-    {
-    //   if (weather.weather[0].main != "undefined") {
-    //     return "app"
-    //   } else if (weather.weather[0].main == "Clear") {
-
-    //   }
-    // }
-
-    // if (time < 10) {
-    //   greeting = "Good morning";
-    // } else if (time < 20) {
-    //   greeting = "Good day";
-    // } else {
-    //   greeting = "Good evening";
-    // }
-  
-
-  //   {
-  //     (typeof weather.main != "undefined")
-  //   ? ((weather.weather[0].main == "Clear") ? 'clear' : "app") : 'app'
-  // }
-}
       <main>
         <div className="search-box">
           <input 
