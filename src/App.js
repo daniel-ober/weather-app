@@ -48,11 +48,11 @@ const search = e => {
     ];
 
     let day = days[d.getDay()];
-    let date = d.getDate();
     let month = months[d.getMonth()];
+    let date = d.getDate();
     let year = d.getFullYear();
 
-    return `${day} ${date} ${month} ${year}`;
+    return `${day} ${month} ${date} ${year}`;
   };
 
   return (
@@ -76,6 +76,10 @@ const search = e => {
               </div>
               <div className="weather-box">
             <div className="temp">{Math.round(weather.main.temp)}°F</div>
+            <div className="temp-high-low">
+              <div className="temp-high">H:{Math.round(weather.main.temp_max)}°</div>
+              <div className="temp-low">L:{Math.round(weather.main.temp_min)}°</div>
+            </div>
             <div className="weather">{weather.weather[0].description}</div>
           </div>
         </div>
