@@ -111,13 +111,13 @@ main {
   border-radius: 12px;
   border: none;
   background: rgb(0 0 0 / 12%);
-  color: inherit;
+  color: black;
   backdrop-filter: blur(6px);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .search-bar::placeholder {
-  color: #ccc;
+  color: #4b4b4b;
 }
 
 .search-bar:focus {
@@ -144,6 +144,7 @@ main {
   border: none;
   color: inherit;
   font-size: 1.2rem;
+  color: #111;
   cursor: pointer;
   padding: 0;
   display: flex;
