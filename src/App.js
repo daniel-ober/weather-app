@@ -97,6 +97,7 @@ function App() {
     }
   };
 
+
   const fetchWeatherByCoords = () => {
     setIsLocating(true); // show loading state
 
