@@ -91,6 +91,7 @@ main {
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
 }
 
+/* Search section */
 .search-box {
   display: flex;
   flex-direction: column;
@@ -106,33 +107,24 @@ main {
 
 .search-bar {
   flex: 1;
-  padding: 1rem 2.5rem 1rem 1rem; /* space for icon */
+  padding: 1rem 2.5rem 1rem 1rem;
   font-size: 1rem;
   border-radius: 12px;
   border: none;
-  background: rgb(0 0 0 / 12%);
-  color: black;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
   backdrop-filter: blur(6px);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
 }
 
 .search-bar::placeholder {
-  color: #4b4b4b;
+  color: #444;
 }
 
 .search-bar:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.search-box button {
-  padding: 0.9rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 12px;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  background: rgba(255, 255, 255, 1);
 }
 
 .locate-btn {
@@ -142,27 +134,41 @@ main {
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: inherit;
-  font-size: 1.2rem;
   color: #111;
+  font-size: 1.2rem;
   cursor: pointer;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 .locate-btn:hover {
   opacity: 0.8;
 }
 
+/* Optional dark theme overrides */
+.app.dark .search-bar {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.app.dark .search-bar::placeholder {
+  color: #ccc;
+}
+
+.app.dark .locate-btn {
+  color: #fff;
+}
+
 .location-status {
   margin-top: 6px;
   font-size: 0.85rem;
-  color: #ccc;
+  color: #555;
   text-align: center;
 }
 
+/* Location / Weather Info */
 .location-box {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -170,8 +176,6 @@ main {
 
 .location {
   font-size: 2rem;
-  /* font-weight: 600; */
-  /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); */
 }
 
 .last-updated {
@@ -210,6 +214,7 @@ main {
   margin-left: 4px;
 }
 
+/* Forecast */
 .forecast-container h3 {
   font-size: 1.2rem;
   font-weight: 500;
@@ -250,6 +255,7 @@ main {
   font-weight: 500;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
   .temp-value {
     font-size: 3.5rem;
