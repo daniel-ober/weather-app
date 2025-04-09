@@ -3,8 +3,8 @@ import "./App.css";
 import { LoadScript, Autocomplete } from "@react-google-maps/api";
 import logo from "./assets/weathernest-long.png";
 import { getImageBrightness } from "./utils/colorHelper";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 
 const libraries = ["places"];
 
@@ -97,19 +97,17 @@ function App() {
     }
   };
 
-
   const fetchWeatherByCoords = () => {
-    setIsLocating(true); // show loading state
-
+    setIsLocating(true);
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const query = `${position.coords.latitude},${position.coords.longitude}`;
         fetchWeatherData(query);
-        setIsLocating(false); // hide on success
+        setIsLocating(false);
       },
       () => {
         setError("Unable to access your location.");
-        setIsLocating(false); // hide on failure
+        setIsLocating(false);
       }
     );
   };
@@ -150,27 +148,36 @@ function App() {
           </header>
 
           <div className="search-box">
-  <Autocomplete
-    onLoad={(auto) => (autocompleteRef.current = auto)}
-    onPlaceChanged={handlePlaceChanged}
-    options={{ types: ['geocode'], componentRestrictions: { country: 'us' } }}
-  >
-    <div className="search-input-wrapper">
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="Enter a city, address, or zip..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button className="locate-btn" onClick={fetchWeatherByCoords} title="Use my location">
-        <FontAwesomeIcon icon={faLocationCrosshairs} />
-      </button>
-    </div>
-  </Autocomplete>
+            <Autocomplete
+              onLoad={(auto) => (autocompleteRef.current = auto)}
+              onPlaceChanged={handlePlaceChanged}
+              options={{
+                types: ["geocode"],
+                componentRestrictions: { country: "us" },
+              }}
+            >
+              <div className="search-input-wrapper">
+                <input
+                  type="text"
+                  className="search-bar"
+                  placeholder="Enter a city, address, or zip..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+                <button
+                  className="locate-btn"
+                  onClick={fetchWeatherByCoords}
+                  title="Use my location"
+                >
+                  <FontAwesomeIcon icon={faLocationCrosshairs} />
+                </button>
+              </div>
+            </Autocomplete>
 
-  {isLocating && <div className="location-status">Getting your location...</div>}
-</div>
+            {isLocating && (
+              <div className="location-status">Getting your location...</div>
+            )}
+          </div>
 
           {error && <div className="error-message">{error}</div>}
 
